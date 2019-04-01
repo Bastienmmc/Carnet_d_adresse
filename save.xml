@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persons>
+    <person>
+        <adresse>rue des impasses</adresse>
+        <codePostal>75000</codePostal>
+        <mail>jean@valjean.Com</mail>
+        <nom>Jean</nom>
+        <num>450-555-230</num>
+        <num2>450-556-530</num2>
+        <prenom>Valjean</prenom>
+        <ville>Paris</ville>
+    </person>
+</persons>
