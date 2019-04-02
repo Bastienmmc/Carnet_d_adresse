@@ -113,6 +113,12 @@ public class PersonEditDialogController {
      */
     @FXML
     private void handleCancel() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Attention");
+            alert.setHeaderText("Vos modifications ne seront pas sauvegardées");
+            alert.setContentText("Etes vous sûr(e) de vouloir continuer ?");
+            
+            alert.showAndWait();
         dialogStage.close();
     }
 
