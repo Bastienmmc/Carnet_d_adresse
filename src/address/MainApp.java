@@ -26,7 +26,9 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 /**
- * The main app
+ * MainApp creates the interface in calling view objects' methods. 
+ * It also registers the path of current document opened which insures 
+ * that this document will be loaded automatically next time when we open the application.
  * 
  * author Sandra, Tian, Bastien
  */
