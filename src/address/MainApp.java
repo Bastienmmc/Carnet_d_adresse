@@ -1,6 +1,3 @@
-/*
- * 
- */
 package address;
 
 import address.model.Person;
@@ -28,8 +25,10 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-/*
- * author Sandra
+/**
+ * The main app
+ * 
+ * author Sandra, Tian, Bastien
  */
 public class MainApp extends Application {
 
@@ -43,16 +42,7 @@ public class MainApp extends Application {
      * Constructor
      */
     public MainApp() {
-        // Add some sample data
-       /* personData.add(new Person("Hans", "Muster"));
-        personData.add(new Person("Ruth", "Mueller"));
-        personData.add(new Person("Heinz", "Kurz"));
-        personData.add(new Person("Cornelia", "Meier"));
-        personData.add(new Person("Werner", "Meyer"));
-        personData.add(new Person("Lynda", "Kunz"));
-        personData.add(new Person("Anna", "Best"));
-        personData.add(new Person("Stefan", "Meier"));
-        personData.add(new Person("Martin", "Mueller")); */
+       
     }
 
     /**

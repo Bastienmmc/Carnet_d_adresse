@@ -19,14 +19,9 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Sortir" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edition">
+          <Menu mnemonicParsing="false" text="A propos">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Aide">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="A propos" />
             </items>
           </Menu>
         </menus>

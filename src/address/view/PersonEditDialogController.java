@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package address.view;
 
 import javafx.fxml.FXML;
@@ -14,6 +9,7 @@ import address.model.Person;
 
 
 /**
+ * The controller for Person Edit.
  * Dialog to edit details of a person.
  *
  * @author Sandra
@@ -100,8 +96,7 @@ public class PersonEditDialogController {
             person.setVille(villeField.getText());
             person.setNum(numField.getText());
             person.setNum2(num2Field.getText());
-            person.setMail(mailField.getText());
-            
+            person.setMail(mailField.getText());            
 
             okClicked = true;
             dialogStage.close();
@@ -116,8 +111,7 @@ public class PersonEditDialogController {
         Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Attention");
             alert.setHeaderText("Vos modifications ne seront pas sauvegardées");
-            alert.setContentText("Etes vous sûr(e) de vouloir continuer ?");
-            
+            alert.setContentText("Etes vous sûr(e) de vouloir continuer ?");            
             alert.showAndWait();
         dialogStage.close();
     }
@@ -133,35 +127,21 @@ public class PersonEditDialogController {
         if (nomField.getText() == null || nomField.getText().length() == 0) {
             errorMessage += "Nom invalide!\n";
         }
-        if (prenomField.getText() == null || prenomField.getText().length() == 0) {
-            errorMessage += "Prénom invalide!\n";
-        }
         if (adresseField.getText() == null || adresseField.getText().length() == 0) {
             errorMessage += "Adresse invalide!\n";
         }
-
         if (codePostalField.getText() == null || codePostalField.getText().length() == 0) {
             errorMessage += "Code postal invalide!\n";
         } 
-
         if (villeField.getText() == null || villeField.getText().length() == 0) {
             errorMessage += "Ville invalide!\n";
-        }
-        
+        }        
         if (numField.getText() == null || numField.getText().length() == 0) {
             errorMessage += "Téléphone invalide!\n";
-        }
-        
-        if (num2Field.getText() == null || num2Field.getText().length() == 0) {
-            errorMessage += "Télephone Bis invalide!\n";
-        }
-        
+        }        
         if (mailField.getText() == null || mailField.getText().length() == 0) {
             errorMessage += "E-mail invalide!\n";
-        }
-
-        
-
+        }  
         if (errorMessage.length() == 0) {
             return true;
         } else {

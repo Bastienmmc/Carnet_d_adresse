@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package address.view;
 
 import java.io.File;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -18,7 +12,7 @@ import address.MainApp;
  * application layout containing a menu bar and space where other JavaFX
  * elements can be placed.
  * 
- * @author Marco Jakob
+ * @author Sandra, Tian, Bastien
  */
 public class RootLayoutController {
 
@@ -107,9 +101,9 @@ public class RootLayoutController {
     @FXML
     private void handleAbout() {
         Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("AddressApp");
-        alert.setHeaderText("About");
-        alert.setContentText("Author: Marco Jakob\nWebsite: http://code.makery.ch");
+        alert.setTitle("Carnet d'Adresse");
+        alert.setHeaderText("Ce carnet est sponsorisé par les stagiaires de LDNR.\nUtilisation simple, entrez vos contacts et sauvegardez le tout dans un fichier xml. \nVous pourrez réouvirir ou partager le fichier");
+        alert.setContentText("Auteurs: Sandra, Tian, Bastien");
 
         alert.showAndWait();
     }
