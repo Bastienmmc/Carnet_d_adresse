@@ -136,14 +136,7 @@ public class PersonEditDialogController {
 
         if (codePostalField.getText() == null || codePostalField.getText().length() == 0) {
             errorMessage += "Code postal invalide!\n";
-        } /* else {
-            // try to parse the postal code into an int.
-            try {
-                Integer.parseInt(postalCodeField.getText());
-            } catch (NumberFormatException e) {
-                errorMessage += "No valid postal code (must be an integer)!\n";
-            }
-        } */
+        } 
 
         if (villeField.getText() == null || villeField.getText().length() == 0) {
             errorMessage += "Ville invalide!\n";
