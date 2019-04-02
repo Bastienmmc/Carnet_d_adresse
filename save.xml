@@ -10,4 +10,24 @@
         <prenom>Valjean</prenom>
         <ville>Paris</ville>
     </person>
+    <person>
+        <adresse>impasse du camion</adresse>
+        <codePostal>93300</codePostal>
+        <mail>macgyver@tv.com</mail>
+        <nom>Giver</nom>
+        <num>0820874854</num>
+        <num2>0820323232</num2>
+        <prenom>Mac</prenom>
+        <ville>Montreuil</ville>
+    </person>
+    <person>
+        <adresse>LDNR</adresse>
+        <codePostal>31000</codePostal>
+        <mail>vincent.britelle@ldnr.fr</mail>
+        <nom>Britelle</nom>
+        <num>0500000000</num>
+        <num2>0500000000</num2>
+        <prenom>Vincent</prenom>
+        <ville>Labège</ville>
+    </person>
 </persons>
