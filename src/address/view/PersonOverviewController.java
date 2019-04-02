@@ -9,8 +9,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import address.MainApp;
 import address.model.Person;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
@@ -26,6 +30,8 @@ public class PersonOverviewController {
     private TableColumn<Person, String> nomColumn;
     @FXML
     private TableColumn<Person, String> prenomColumn;
+    @FXML
+    private TextField filterField;
 
     @FXML
     private Label nomLabel;
@@ -43,6 +49,8 @@ public class PersonOverviewController {
     private Label num2Label;
     @FXML
     private Label mailLabel;
+    
+   
 
     // Reference to the main application.
     private MainApp mainApp;
@@ -69,6 +77,7 @@ public class PersonOverviewController {
 
         // Listen for selection changes and show the person details when changed.
         personTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> showPersonDetails(newValue));
+        
     }
 
     /**
@@ -78,11 +87,46 @@ public class PersonOverviewController {
      */
     public void setMainApp(MainApp mainApp) {
         this.mainApp = mainApp;
-
+        
         // Add observable list data to the table
-        personTable.setItems(mainApp.getPersonData());
+        personTable.setItems(filterEngine(mainApp.getPersonData()));
     }
+    
+    private SortedList<Person> filterEngine(ObservableList<Person> data) {
+        FilteredList<Person> filteredData = new FilteredList<>(data, p -> true);
 
+        // 2. Set the filter Predicate whenever the filter changes.
+        filterField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(myObject -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name field in your object with filter.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (String.valueOf(myObject.getNom()).toLowerCase().contains(lowerCaseFilter)) {
+                    return true;
+                    // Filter matches first name.
+
+                } else if (String.valueOf(myObject.getPrenom()).toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                } 
+
+                return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList. 
+        SortedList<Person> sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(personTable.comparatorProperty());
+        
+        return sortedData;
+    }
+    
     /**
      * Fills all text fields to show details about the person. If the specified
      * person is null, all text fields are cleared.
@@ -173,11 +217,5 @@ public class PersonOverviewController {
             alert.showAndWait();
         }
     }
-
-    /*@FXML
-    private String handleSearchPerson() {
-        String str;
-        return str;
-    }*/
 
 }
