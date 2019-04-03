@@ -59,7 +59,7 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("AddressApp");
+        this.primaryStage.setTitle("Carnet d'adresse");
 
         // Set the application icon.
         this.primaryStage.getIcons().add(new Image("file:resources/images/icone.png"));

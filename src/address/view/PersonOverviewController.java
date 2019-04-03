@@ -183,9 +183,6 @@ public class PersonOverviewController {
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK){
                 mainApp.getPersonData().remove(selectedIndex);
-                //personTable.getItems().remove(selectedIndex);
-                //personTable.getItems().remove(selectedIndex);
-                //personTable.setItems(filterEngine(mainApp.getPersonData()));
             } else {
                 alert.close();
             }
